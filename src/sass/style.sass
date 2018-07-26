@@ -1,0 +1,260 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+ul
+  list-style: none
+a
+  text-decoration: none
+a:hover
+  @extend a
+a:visited
+  @extend a
+a:active
+  @extend a
+
+html
+  background: #999
+body
+  font-family: sans-serif
+  .container
+    position: relative
+    nav
+      $navHeight: 80px
+      width: 100%
+      height: $navHeight*2
+      background: rgba(#444444, 0.8)
+      position: fixed
+      top: 0
+      z-index: 999
+      transition: .3s
+      .navLogo
+        line-height: $navHeight - 4px
+        width: 100%
+        color: white
+        text-align: center
+        h1
+          animation: showUp 1.5s
+          span
+            color: red
+            font-size: 16px
+            font-style: italic
+      .navbar
+        width: 100%
+        ul
+          display: flex
+          flex-direction: row
+          justify-content: space-around
+          li
+            width: 100%
+            height: $navHeight
+            line-height: $navHeight
+            text-align: center
+            transition: .3s
+            &.active
+              background: green
+            a
+              display: block
+              width: 100%
+              height: 100%
+              color: #bbb
+              font-size: 22px
+              &:hover
+                color: #fff
+          li:last-child
+            background: teal
+    .scrolled
+      $navHeight: 40px
+      height: $navHeight
+      .navLogo
+        display: none
+      .navbar
+        ul
+          li
+            height: $navHeight
+            line-height: $navHeight
+            width: 90px
+            a
+              font-size: 18px
+    $height: 70vh
+    header
+      width: 100%
+      height: $height
+      background-color: #777
+      background-image: url(../img/head_img.jpg)
+      background-repeat: no-repeat
+      background-position: center
+      background-size: cover
+      color: white
+      display: flex
+      justify-content: center
+      align-items: center
+      position: fixed
+      top: 0
+      &.portfolio
+        background-image: url(../img/portfolio_head_img.jpg)
+      &.blog
+        background-image: url(../img/blog_head_img.jpg)
+      &.contact
+        background-image: url(../img/contact_head_img.jpg)
+      h1
+        font-size: 7vw
+        color: #fff
+        text-shadow: 0 0 25px #333
+        letter-spacing: 5px
+    #main
+      position: absolute
+      top: $height
+      width: 100%
+      background: white
+      #content
+        padding: 20px 10%
+        line-height: 1.6
+        display: grid
+        p
+          margin: 20px auto
+          text-indent: 60px
+          font-size: 20px
+        &.home
+          grid-template-columns: repeat(3, 1fr)
+          grid-template-rows: auto
+          grid-template-areas: 'image lead lead' 'info1 info1 info1' 'skillSet skillSet skillSet' 'info2 info2 info2' 'info3 info3 info3'
+          .image
+            grid-area: image
+            height: 250px
+            background: #666
+          .lead
+            grid-area: lead
+            font-size: 23px
+            font-weight: bolder
+          .info1
+            grid-area: info1
+          .skillSet
+            grid-area: skillSet
+            display: flex
+            flex-direction: row
+            justify-content: space-around
+            img
+              height: 40px
+          .info2
+            grid-area: info2
+          .info3
+            grid-area: info3
+        &.portfolio
+          #projectsMenu
+            padding: 30px
+            display: grid
+            grid-gap: 40px
+            grid-template-columns: repeat(4, 1fr)
+            .btn
+              height: 40px
+              background: #aaa
+              color: white
+              box-shadow: 0 1px 5px rgba(#999999, 0.9)
+              font-size: 18px
+              border: none
+              border-radius: 6px
+              cursor: pointer
+              transition: .3s
+              &:hover
+                background: #999
+                box-shadow: none
+          #displayBox
+            display: grid
+            grid-template-columns: repeat(4, 1fr)
+            grid-gap: 20px
+            // @for $i from 1 through 8
+            //   ##{box}#{$i}
+            //     grid-area: box#{$i}
+            .box
+              $size: 140px
+              width: $size
+              height: $size
+              margin: auto
+              border: 1px solid #666
+              display: flex
+              justify-content: center
+              align-items: center
+              transition: 2s
+
+      footer
+        background: #555
+        color: white
+        text-align: center
+        display: grid
+        grid-template-columns: repeat(6, 1fr)
+        grid-template-rows: auto
+        grid-template-areas: '. logo . social social .' '. . nav nav . .' '. . copyrights copyrights . .'
+        a
+          color: white
+        .logo
+          grid-area: logo
+        .social
+          grid-area: social
+          margin-top: 20px
+          .socialLink
+            $size: 60px
+            width: $size
+            height: $size
+            float: left
+            margin-right: 20px
+            background-repeat: no-repeat
+            background-size: cover
+            transition: .4s
+            &:hover
+              opacity: .5
+          .fb
+            background-image: url(../img/social/facebook.png)
+          .gh
+            background-image: url(../img/social/github3.png)
+          .li
+            background-image: url(../img/social/linkedin2.png)
+        .nav
+          margin-top: 60px
+          grid-area: nav
+          ul
+            display: flex
+            flex-direction: row
+            justify-content: space-around
+            li
+              &.active a
+                color: #fbff46
+              a
+                font-family: serif
+                font-size: 24px
+                color: #bbb
+                transition: .4s
+                &:hover
+                  color: #fff
+                  text-decoration: underline
+        .copyrights
+          margin-top: 60px
+          grid-area: copyrights
+
+
+  .arrowUp
+    width: 60px
+    height: 60px
+    position: fixed
+    bottom: 60px
+    right: -60px
+    border: 1px solid #999
+    border-right: none
+    // box-shadow:  0 0 20px #777
+    background-image: url(../img/circled-up-2.png)
+    background-repeat: no-repeat
+    background-size: cover
+    opacity: .7
+    cursor: pointer
+    transition: .6s
+    &:hover
+      opacity: 1
+  .open
+    right: 0px
+
+@keyframes showUp
+  from
+    opacity: 0
+  to
+    opacity: 1
