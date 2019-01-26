@@ -63,7 +63,6 @@ body
               &:hover
                 color: #fff
           li:last-child
-            background: teal
     .scrolled
       $navHeight: 40px
       height: $navHeight
@@ -182,59 +181,91 @@ body
               align-items: center
               transition: 2s
 
-      footer
-        background: #555
+  // CONTACT
+  .contactForm
+    margin-top: 30px
+    form
+      width: 80%
+      margin: auto
+      padding: 20px
+      input, label, textarea
+        width: 100%
+        margin-bottom: 15px
+      input, textarea
+        font-size: 18px
+        padding-left: 10px
+      input
+        height: 30px
+      textarea
+        height: 120px
+        resize: none
+      button
+        display: block
+        margin: 20px auto
+        padding: 10px 20px
+        border: none
+        background: #34e63b
         color: white
-        text-align: center
-        display: grid
-        grid-template-columns: repeat(6, 1fr)
-        grid-template-rows: auto
-        grid-template-areas: '. logo . social social .' '. . nav nav . .' '. . copyrights copyrights . .'
-        a
-          color: white
-        .logo
-          grid-area: logo
-        .social
-          grid-area: social
-          margin-top: 20px
-          .socialLink
-            $size: 60px
-            width: $size
-            height: $size
-            float: left
-            margin-right: 20px
-            background-repeat: no-repeat
-            background-size: cover
+        box-shadow: 0 0 15px #999
+        transition: .4s
+        cursor: pointer
+        &:hover
+          box-shadow: 0 0 5px #999
+
+
+  footer
+    background: #555
+    color: white
+    text-align: center
+    display: grid
+    grid-template-columns: repeat(6, 1fr)
+    grid-template-rows: auto
+    grid-template-areas: '. logo . social social .' '. . nav nav . .' '. . copyrights copyrights . .'
+    a
+      color: white
+    .logo
+      grid-area: logo
+    .social
+      grid-area: social
+      margin-top: 20px
+      .socialLink
+        $size: 60px
+        width: $size
+        height: $size
+        float: left
+        margin-right: 20px
+        background-repeat: no-repeat
+        background-size: cover
+        transition: .4s
+        &:hover
+          opacity: .5
+      .fb
+        background-image: url(../img/social/facebook.png)
+      .gh
+        background-image: url(../img/social/github3.png)
+      .li
+        background-image: url(../img/social/linkedin2.png)
+    .nav
+      margin-top: 60px
+      grid-area: nav
+      ul
+        display: flex
+        flex-direction: row
+        justify-content: space-around
+        li
+          &.active a
+            color: #fbff46
+          a
+            font-family: serif
+            font-size: 24px
+            color: #bbb
             transition: .4s
             &:hover
-              opacity: .5
-          .fb
-            background-image: url(../img/social/facebook.png)
-          .gh
-            background-image: url(../img/social/github3.png)
-          .li
-            background-image: url(../img/social/linkedin2.png)
-        .nav
-          margin-top: 60px
-          grid-area: nav
-          ul
-            display: flex
-            flex-direction: row
-            justify-content: space-around
-            li
-              &.active a
-                color: #fbff46
-              a
-                font-family: serif
-                font-size: 24px
-                color: #bbb
-                transition: .4s
-                &:hover
-                  color: #fff
-                  text-decoration: underline
-        .copyrights
-          margin-top: 60px
-          grid-area: copyrights
+              color: #fff
+              text-decoration: underline
+    .copyrights
+      margin-top: 60px
+      grid-area: copyrights
 
 
   .arrowUp

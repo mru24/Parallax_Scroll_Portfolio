@@ -97,15 +97,15 @@ gulp.task('html', function() {
     .pipe(seo({
       list: ['og', 'se', 'schema', 'twitter'],
       meta: {
-            title: 'POLAND - Road to World Cup 2018',
-            description: 'The way of Polish Football team to World Cup 2018 finals',
+            title: 'Portfolio',
+            description: 'Simple Paralax Portfolio',
             author: 'Val Wroblewski',
-            keywords: ['Poland', 'World', 'Cup', '2018', 'football', 'qualifications', 'Russia'],
+            keywords: ['paralax', 'gulp', 'sass', 'java script', 'ww Project', 'val wroblewski'],
             robots: {
                 index: false, // true
                 follow: true // true
             },
-            revisitAfter: '5 month', // 3 month
+            revisitAfter: '2 month', // 3 month
             // image: 'http://mywebsite.com/image.jpg',
             site_name: 'wwproject.eu',
             type: 'website'
@@ -131,7 +131,7 @@ gulp.task('sitemap', function() {
       read: false
     })
     .pipe(sitemap({
-      siteUrl: 'http://www.wwproject.eu/projects/RTWC'
+      siteUrl: 'http://www.wwproject.eu/projects/ParalaxPortfolio'
     }))
     .pipe(gulp.dest(config.dest))
 });
